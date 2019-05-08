@@ -1,0 +1,3267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/chen18221987993/article/details/81943438"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"C#自定义控件的创建 - chen18221987993的博客"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>C#自定义控件的创建 - chen18221987993的博客 - CSDN博客</title>
+
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-c9f101d6a9.min.css">
+            
+            <script type="application/ld+json">{"@context":"https:\/\/ziyuan.baidu.com\/contexts\/cambrian.jsonld","@id":"https:\/\/blog.csdn.net\/chen18221987993\/article\/details\/81943438","appid":"1563894916825412","title":"C#\u81ea\u5b9a\u4e49\u63a7\u4ef6\u7684\u521b\u5efa - chen18221987993\u7684\u535a\u5ba2","images":["https:\/\/img-blog.csdn.net\/20180822135845736?watermark\/2\/text\/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW4xODIyMTk4Nzk5Mw==\/font\/5a6L5L2T\/fontsize\/400\/fill\/I0JBQkFCMA==\/dissolve\/70","https:\/\/img-blog.csdn.net\/20180822140631702?watermark\/2\/text\/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW4xODIyMTk4Nzk5Mw==\/font\/5a6L5L2T\/fontsize\/400\/fill\/I0JBQkFCMA==\/dissolve\/70","https:\/\/img-blog.csdn.net\/20180822140926209?watermark\/2\/text\/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW4xODIyMTk4Nzk5Mw==\/font\/5a6L5L2T\/fontsize\/400\/fill\/I0JBQkFCMA==\/dissolve\/70"],"pubDate":"2019-05-08T21:05:35"}</script>
+        
+          <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-9b39979775.min.css">
+        <script type="text/javascript">
+        var username = "chen18221987993";
+        var userPermission = false;
+        var blog_address = "https://blog.csdn.net/chen18221987993";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "jinwenmao";
+        var currentUserPermission = false;
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/chen18221987993/article/details/81943438"
+        var blogUrl = "https://blog.csdn.net/";
+        //页面皮肤样式
+        var curSkin = "skin3-template";
+        // 第四范式所需数据
+        var articleTitles = "C#自定义控件的创建 - chen18221987993的博客";
+        var articleID = "81943438";
+        
+        var nickName = "chen15271802122";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/chen18221987993/phoenix/comment";
+        var articleDetailUrl = "https://blog.csdn.net/chen18221987993/article/details/81943438";
+    </script>
+    <script type="text/javascript">
+        // Traffic Stats of the entire Web site By baidu
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?6bcd52f51e9b3dce32bec4a3997715ac";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        // Traffic Stats of the entire Web site By baidu end
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="https://csdnimg.cn/rabbit/exposure-click/main-1.0.6.js"></script>
+    <script src="//g.csdnimg.cn/fixed-sidebar/1.1.3/fixed-sidebar.js" type="text/javascript"></script>
+    <!-- 新版上报 -->
+      <script src="//g.csdnimg.cn/track/1.2.6/track.js" type="text/javascript"></script>
+    <!-- 新版上报end -->
+
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<!-- nodata 第三栏接口无数据时样式不变 -->
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-923","con":",,"}' data-track-click='{"mod":"kp_popu_476-923","con":",,"}'><script src="//csdnimg.cn/public/common/indexSuperise/1.0.3/indexSuperise.js?20190103190825"></script>
+<script>
+ window.csdn.indexSuperise({
+      smallMoveImg: '//img-ads.csdn.net/2019/201905051104467314.png',
+      bigMoveImg: '//img-ads.csdn.net/2019/201905051104363598.png',
+     link:'//edu.csdn.net/topic/ai30?utm_source=blogpopup',
+boxStyle:140,
+trackSuperId:476,
+smallMove:'notMove',  
+trackSId:923
+    });
+</script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.css">
+<script type="text/javascript">
+	// 容错处理
+	var NEWS_FEED = function(){}
+</script>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script type="text/javascript" src="//g.csdnimg.cn/copyright/1.0.3/copyright.js"></script>
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<script src="https://dup.baidustatic.com/js/ds.js"></script>
+<div class="container clearfix" id="mainBox">
+			<div class="recommend-right">
+  <ul class="recommend-fixed-box">
+    
+  </ul>
+</div>	
+    <main>
+        <div class="blog-content-box">
+	<div class="article-header-box">
+		<div class="article-header">
+			<div class="article-title-box">
+				<span class="article-type type-1 float-left">原</span>				<h1 class="title-article">C#自定义控件的创建</h1>
+			</div>
+			<div class="article-info-box">
+				<div class="article-bar-top">
+																									<span class="time">2018年08月22日 14:23:10</span>
+					<a class="follow-nickName" href="https://me.csdn.net/chen18221987993" target="_blank">chen15271802122</a>
+						<span class="read-count">阅读数：4462</span>
+										</div>
+				<div class="operating">
+									</div>
+			</div>
+		</div>
+	</div>
+	<article class="baidu_pl">
+		<div id="article_content" class="article_content clearfix csdn-tracking-statistics" data-pid="blog"  data-mod=popu_307  data-dsm = "post" >
+								<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-f57960eb32.css" />
+        								            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-f57960eb32.css" />
+						<div class="htmledit_views" id="content_views">
+                <p>C#自定义控件的创建</p>
+
+<p>在编程过程中，现有的c#控件远远不能满足我们的需要，这时候就需要我们自己来开发控件了。本人在开发自定义控件时走了一些弯路，写下此篇，希望能够给有需要的朋友一些帮助，也借此加深自己的印象。</p>
+
+<hr /><p>1.创建自定义控件</p>
+
+<p><img alt="" class="has" height="653" src="https://img-blog.csdn.net/20180822135845736?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW4xODIyMTk4Nzk5Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="947" /></p>
+
+<p><strong>选择【经典桌面】——【窗体控件库】</strong></p>
+
+<p>2.添加控件，组合成一个新的控件</p>
+
+<p>自定义控件功能：打开一张图片，将图片展示在pictureBox控件中，并将图片的名称、大小、尺寸显示出来</p>
+
+<p>控件如下：</p>
+
+<p> pictureBox1：命名为picBox</p>
+
+<p> label1~label6  ：左边三个显示文字，右边三个命名为：lblName  lblLength  lblSize</p>
+
+<p> button1：命名为btnOpen</p>
+
+<p><img alt="" class="has" height="216" src="https://img-blog.csdn.net/20180822140631702?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW4xODIyMTk4Nzk5Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="400" /></p>
+
+<p> 代码如下：</p>
+
+<pre class="has">
+<code class="hljs"> private void btnOpen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofdPic = new OpenFileDialog();
+            ofdPic.Filter = "JPG(*.JPG;*.JPEG);gif文件(*.GIF);PNG(*.PNG)|*.jpg;*.jpeg;*.gif;*.png";
+            ofdPic.FilterIndex = 1;
+            ofdPic.RestoreDirectory = true;
+            ofdPic.FileName = "";
+            if (ofdPic.ShowDialog() == DialogResult.OK)
+            {
+                string sPicPaht = ofdPic.FileName.ToString();
+                FileInfo fiPicInfo = new FileInfo(sPicPaht);
+                long lPicLong = fiPicInfo.Length / 1024;
+                string sPicName = fiPicInfo.Name;
+                string sPicDirectory = fiPicInfo.Directory.ToString();
+                string sPicDirectoryPath = fiPicInfo.DirectoryName;
+                Bitmap bmPic = new Bitmap(sPicPaht);
+                if (lPicLong &gt; 400)
+                {
+                    MessageBox.Show("此文件大小為" + lPicLong + "K；已超過最大限制的K范圍！");
+                }
+                else
+                {
+                    Point ptLoction = new Point(bmPic.Size);
+                    if (ptLoction.X &gt; picBox.Size.Width || ptLoction.Y &gt; picBox.Size.Height)
+                    {
+                        picBox.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                    else
+                    {
+                        picBox.SizeMode = PictureBoxSizeMode.CenterImage;
+                    }
+                }
+                picBox.LoadAsync(sPicPaht);
+                lblName.Text = sPicName;
+                lblLength.Text = lPicLong.ToString() + " KB";
+                lblSize.Text = bmPic.Size.Width.ToString() + "×" + bmPic.Size.Height.ToString();
+            }
+        }</code></pre>
+
+<p>点击【解决方案】，右键弹出窗口，点击【生成解决方案】</p>
+
+<p><img alt="" class="has" height="254" src="https://img-blog.csdn.net/20180822140926209?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW4xODIyMTk4Nzk5Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="653" /></p>
+
+<p>至此，自定义控件的创建已经完成！</p>
+
+<p><strong>生成的控件路径在Debug文件夹下，dll文件</strong></p>
+
+<p>3.自定义控件测试</p>
+
+<p>新建windows窗体应用程序</p>
+
+<p>发现在左边的控件工具栏中并没有刚刚的自定义控件，不要急！！</p>
+
+<p>选择工具下的【选择工具箱项】</p>
+
+<p><img alt="" class="has" height="485" src="https://img-blog.csdn.net/20180822141541643?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW4xODIyMTk4Nzk5Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="673" /></p>
+
+<p>浏览，选择dll文件路径，注意路径中不能包含中文字符，切记！否则会出错！</p>
+
+<p>添加成功后，会发现工具箱中出现了刚刚定义的控件。</p>
+
+<p><img alt="" class="has" height="298" src="https://img-blog.csdn.net/20180822141813769?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW4xODIyMTk4Nzk5Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="291" /></p>
+
+<p>测试结果：</p>
+
+<p><img alt="" class="has" height="263" src="https://img-blog.csdn.net/2018082214192434?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW4xODIyMTk4Nzk5Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="437" /></p>            </div>
+                      </div>
+	</article>
+</div>
+
+  <div class="hide-article-box hide-article-pos text-center">
+    <div class="border"></div>
+        <a class="btn article-footer-btn" id="btn-readmore" data-track-view='{"mod":"popu_376","con":",https://blog.csdn.net/chen18221987993/article/details/81943438,"}' data-track-click='{"mod":"popu_376","con":",https://blog.csdn.net/chen18221987993/article/details/81943438,"}'>阅读更多</a>
+        <a class="btn article-footer-btn article-footer-bookmark-btn" >
+      <svg class="icon no-active hover-hide" aria-hidden="true">
+        <use xlink:href="#csdnc-bookmark"></use>
+      </svg>
+      <span>收藏</span>
+    </a>
+    <div class="btn article-footer-btn  bds_weixin article-footer-share-btn" data-cmd="weixin" title="分享">
+      <svg class="icon no-active hover-hide" aria-hidden="true">
+        <use xlink:href="#csdnc-share"></use>
+      </svg>
+      <span>分享</span>
+      <div class="bdsharebuttonbox">
+        <a href="#"class="bds_weixin clear-share-style-article-footer" data-cmd="weixin" title="分享"></a>
+      </div>
+    </div>
+
+  </div>
+  
+  <script>
+  (function(){
+    function collection(){
+      if (currentUserName) {
+        var markObj = {};
+            markObj.imgUrl ='https://csdnimg.cn/release/phoenix/static_blog/images/appqr.png';
+        var markPrompt = (new window.csdn.publicPrompt).init(markObj);
+        var maeked = '您已经收藏过';
+        if (!$(this).hasClass("liked")) {
+          $.ajax({
+            url: 'https://my.csdn.net/my/favorite/do_add/2',
+            dataType: 'json',
+            type: 'POST',
+            xhrFields: {
+              withCredentials: true
+            },
+            data: {
+              title: articleTit,
+              url: 'https://blog.csdn.net/chen18221987993/article/details/81943438',
+              share: 1,
+              map_name: ''
+            },
+            success: function(data) {
+              
+              if (data.succ == 1) {
+                $('.btn-bookmark').addClass("liked");
+                $('.article-footer-bookmark-btn').addClass("liked").children('span').text('已收藏');
+                markPrompt.show({})
+                // alert('收藏成功,可以在个人中心查看我的收藏');
+              } else {
+                if (data.msg === "您已经收藏过") {
+                  $('.btn-bookmark').addClass("liked");
+                  $('.article-footer-bookmark-btn').addClass("liked").children('span').text('已收藏');
+                  markPrompt.show({
+                    titleStr: maeked
+                  })
+                }else{
+                  alert(data.msg);
+                  
+                }
+              }
+            }
+          });
+        } else {
+          markPrompt.show({
+            titleStr: maeked
+          })
+        }
+      } else {
+        window.csdn.loginBox.show();
+      }
+    }
+    function permissionCheck(dom){
+      var returnData = false;
+      switch (true) {
+        case currentUserPermission && userPermission:
+          clearReadMoreBtn(dom)
+          returnData = true;
+          break;
+        case userPermission:
+          dom.text('VIP阅读');
+          returnData = false;
+          break;
+        default:
+          
+      }
+      return returnData;
+    }
+    window.csdn = window.csdn ? window.csdn : {};
+    window.csdn.articleCollection = collection;
+    function clearReadMoreBtn(dom) {
+      if(userPermission && !(dom instanceof jQuery)) {
+        window.open('https://mall.csdn.net/vip?utm_source=brv')
+        return false;
+      }
+      dom = dom instanceof jQuery ? dom : $(this);
+      $("div.article_content").removeAttr("style");
+      dom.parent().remove();
+    }
+    function setArticleH(btnReadmore,posi){
+      var winH = $(window).height();
+      var articleBox = $("div.article_content");
+      var artH = articleBox.height();
+      if(artH > winH*posi){
+        articleBox.css({
+          'height':winH*posi+'px',
+          'overflow':'hidden'
+        })
+        btnReadmore.click(clearReadMoreBtn)
+      }else{
+        btnReadmore.parent().remove()
+      }
+    }
+    var btnReadmore = $("#btn-readmore");
+    $('.article-footer-bookmark-btn').click(window.csdn.articleCollection)
+    if(btnReadmore.length>0){
+      if (permissionCheck(btnReadmore)) {
+        return false;
+      }
+      if(currentUserName){
+        setArticleH(btnReadmore,3);
+      }else{
+        setArticleH(btnReadmore,0.5);
+      }
+    }else{
+      $('.hide-article-box').addClass('hide-article-style');
+    }
+  })()
+</script>
+<script>
+		$(".MathJax").remove();
+		if($('div.markdown_views pre.prettyprint code.hljs').length > 0 ){
+				$('div.markdown_views')[0].className = 'markdown_views';
+		}
+</script>
+        <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-386","con":",,"}' data-track-click='{"mod":"kp_popu_58-386","con":",,"}'><div style="width:100%;background:#fff;">
+<script type="text/javascript" src="//rabc1.iteye.com/production/resource/web/6xwm4l.js?lg=ydmpioh"></script>
+</div></div></div>        <a id="commentBox"></a>
+<div class="comment-box">
+	
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="//me.csdn.net/jinwenmao" target="_blank">
+				<img class="" src="https://avatar.csdn.net/6/2/E/3_jinwenmao.jpg">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="81943438">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-mod="popu_384"><a href="#" target="_blank" class="comment_area_btn">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+					<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论">
+				</div>
+			</div>
+		</form>
+	</div>
+
+		<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>
+        <div class="recommend-box">
+            		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wujakf/article/details/78367033,BlogCommendFromThirdService_1"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/wujakf/article/details/78367033" target="_blank" title="C# winform 自定义控件开发">
+				<h4 class="text-truncate oneline">
+						<em>C#</em> winform <em>自定义控件</em>开发				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-27</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							3154</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/wujakf/article/details/78367033" target="_blank" title="C# winform 自定义控件开发">
+							<span class="desc oneline">一些图片不能显示，有个word文档大家可以去下载：点击下载Word文档一般而言，VisualStudio2005中自带的几十种控件已经足够我们使用了，但是，在一些特殊的需求中，可能需要一些特殊的控件来...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/wujakf">来自：	<span class="blog_title"> wuWu的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u012278016/article/details/79929765,BlogCommendFromThirdService_0"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/u012278016/article/details/79929765" target="_blank" title="C# 自定义控件制作和使用实例（winform）">
+				<h4 class="text-truncate oneline">
+						<em>C#</em> <em>自定义控件</em>制作和使用实例（winform）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">04-26</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4735</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/u012278016/article/details/79929765" target="_blank" title="C# 自定义控件制作和使用实例（winform）">
+							<span class="desc oneline">C# 自定义用户控件 此处为转载文章，用于记录自我学习过程，原文链接地址http://blog.csdn.net/xiongxuanwen/article/details/2605109 上篇：控件制...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/u012278016">来自：	<span class="blog_title"> 哲学天空的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/xiongxuanwen/article/details/2605109,BlogCommendFromThirdService_3"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/xiongxuanwen/article/details/2605109" target="_blank" title="C# 自定义控件制作和使用实例">
+				<h4 class="text-truncate oneline">
+						<em>C#</em> <em>自定义控件</em>制作和使用实例				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">07-02</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/xiongxuanwen/article/details/2605109" target="_blank" title="C# 自定义控件制作和使用实例">
+							<span class="desc oneline">C#自定义用户控件xiongxuanwen 上篇：控件制作 本例是制作一个简单的自定义控件，然后用一个简单的测试程序，对于初学者来说，本例子比较简单，只能起到抛石引玉的效果。我也是在学习当中，今后会将...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/xiongxuanwen">来自：	<span class="blog_title"> 小熊之家</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_59" data-pid="59" data-track-view='{"mod":"kp_popu_59-78","con":",,"}' data-track-click='{"mod":"kp_popu_59-78","con":",,"}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qs52955339/article/details/80008854,BlogCommendFromBaidu_9"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qs52955339/article/details/80008854" target="_blank" title="Winform中的自定义组件开发（附带一些Windows GDI编程）">
+				<h4 class="text-truncate oneline">
+						Winform中的自定义组件开发（附带一些Windows GDI编程）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">04-19</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							555</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qs52955339/article/details/80008854" target="_blank" title="Winform中的自定义组件开发（附带一些Windows GDI编程）">
+							<span class="desc oneline">开题老规矩，感激女朋友的支持及陪伴，有时候写代码比较忙，想问题想到头大，突然被公司召回，总之就是各种突发事项不能陪她说话，谢谢她一直以来的谅解！下面进入正题：在实际开发中，我们会经常遇到系统给定的控件...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qs52955339">来自：	<span class="blog_title"> 王昱潇的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u012278016/article/details/79929743,BlogCommendFromThirdService_2"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/u012278016/article/details/79929743" target="_blank" title="C#.NET中自定义控件3种方式和需要注意的地方">
+				<h4 class="text-truncate oneline">
+						<em>C#</em>.NET中<em>自定义控件</em>3种方式和需要注意的地方				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">04-26</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1126</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/u012278016/article/details/79929743" target="_blank" title="C#.NET中自定义控件3种方式和需要注意的地方">
+							<span class="desc oneline">很多时候我们需要使用到自定义控件而在C#中我们主要以3中方式创建自定义控件，还有些需要注意的地方时常被忽略比如Click事件,用户控件的Click并不像系统的Button单击1.继承自.NET类库中已...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/u012278016">来自：	<span class="blog_title"> 哲学天空的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/lcj401175209/article/details/52953322,BlogCommendFromThirdService_4"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/lcj401175209/article/details/52953322" target="_blank" title="C#自定义控件之-winform美化">
+				<h4 class="text-truncate oneline">
+						<em>C#</em><em>自定义控件</em>之-winform美化				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-28</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/lcj401175209/article/details/52953322" target="_blank" title="C#自定义控件之-winform美化">
+							<span class="desc oneline">对于系统自带的窗体，博主实在不敢恭维，测试时使用方便快捷，但真正项目中无法使用，只因不美观的外表，每次都很头疼窗体的美化，这里列出一些需要解决的问题和自己收集到的解决方法，如有错误请指出。废话不多说先...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/lcj401175209">来自：	<span class="blog_title"> 微尘物联-联通无限</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq_29377279/article/details/81140513,BlogCommendFromBaidu_5"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qq_29377279/article/details/81140513" target="_blank" title="C# Windows应用窗体用户自定义控件--开关实现">
+				<h4 class="text-truncate oneline">
+						<em>C#</em> Windows应用窗体用户<em>自定义控件</em>--开关实现				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">07-21</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1580</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qq_29377279/article/details/81140513" target="_blank" title="C# Windows应用窗体用户自定义控件--开关实现">
+							<span class="desc oneline">在学习C#Windows应用窗体时，利用用户自定义控件实现了一个小的开关控件。参考：https://www.cnblogs.com/feiyangqingyun/archive/2013/06/15/...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qq_29377279">来自：	<span class="blog_title"> 还是小屁孩</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_387","con":",https://bbs.csdn.net/topics/390143757,BlogCommendFromBaidu_6"}'>
+		<a href="https://bbs.csdn.net/topics/390143757" target="_blank">
+			<h4 class="text-truncate oneline">
+					<em>C#</em> <em>自定义控件</em>属性 怎么立马显示。			</h4>
+			<div class="info-box d-flex align-content-center">
+					<span class="date">07-21</span>
+			</div>
+			<p class="content oneline">
+        <span class="desc oneline">最近做了个控件,就是改变控件的属性值，去改变这个控件的另外一个属性，不能立马刷新， 非要F6生成，或者点击其他控件，再点击我这个自定义控件查看属性，才行，怎么样才可以不用那样的呢？ 这样写 也不行 t</span>
+                  <span class="type-show type-show-bbs">论坛</span>
+        			</p>
+		</a>
+
+	</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_60" data-pid="60" data-track-view='{"mod":"kp_popu_60-894","con":"4933989776516602224,https://edu.csdn.net/course/detail/4865,"}' data-track-click='{"mod":"kp_popu_60-894","con":"4933989776516602224,https://edu.csdn.net/course/detail/4865,"}'><link rel="stylesheet" href="https://www.csdn.net/company/css/edu-recommend-1.0.1.css">
+  <div class="edu-ad-list">
+    <div class="recommend-item-box type_blog clearfix">
+      <div class="content">
+        <a href="https://edu.csdn.net/course/detail/4865?utm_source=baidutj" target="_blank" title="JavaScript常见的引用类型(用OOP的思想来学习JavaScript){第7章}">
+          <h4 class="text-truncate oneline">JavaScript常见的引用类型(用OOP的思想来学习JavaScript){第7章}</h4>
+        </a>
+        <p class="content">
+          <a href="https://edu.csdn.net/course/detail/4865?utm_source=baidutj" target="_blank" title="JavaScript常见的引用类型(用OOP的思想来学习JavaScript){第7章}">
+            <span class="desc oneline">JavaScript已经成为当今流行的语言，是基于Java的一种非常松散的面向对象语言，是数亿网民受益的新动态语言，增强了与用户的交互性。 本课程将毫无保留的将作者积累的开发经验分享给大家，知识点深入浅出，详略得当。技能都来自实际开发的经验，在本课程中，也会将JavaScript开发的常见的“坑”让大家去填满，填满后你离JavaScript开发又进了一步。</span>
+          </a>
+          <span class="blog_title_box oneline ">
+            <span class="type-show type-show-edu type-show-after">学院</span>
+            讲师： <span class="blog_title"> 曹领雄</span>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/ClearLoveQ/article/details/80765615,BlogCommendFromBaidu_7"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/ClearLoveQ/article/details/80765615" target="_blank" title="Winform自定义控件属性">
+				<h4 class="text-truncate oneline">
+						Winform<em>自定义控件</em>属性				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-21</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1543</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/ClearLoveQ/article/details/80765615" target="_blank" title="Winform自定义控件属性">
+							<span class="desc oneline">【WinForm】自定义控件（进度控制条）上篇说了如何创建自定义控件，接下来说说如何自定义属性，如何绘制控件，以进度控制条为例，先上效果图这里只实现了简单的进度控制功能，该控件由三部分组成，总长度（底...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/ClearLoveQ">来自：	<span class="blog_title"> ClearLoveQ的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/weixin_41221000/article/details/85985466,BlogCommendFromBaidu_8"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/weixin_41221000/article/details/85985466" target="_blank" title="c#动态添加自定义控件方法">
+				<h4 class="text-truncate oneline">
+						<em>c#</em>动态添加<em>自定义控件</em>方法				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">01-07</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1529</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/weixin_41221000/article/details/85985466" target="_blank" title="c#动态添加自定义控件方法">
+							<span class="desc oneline"> 在实际的WinForm及WinCE的项目开发过程中，常常会遇上一些个性化的模型展示，今天给大家演示如何创建自定义控件，及动态调用展示。工具/原料	visualstudio2008orvisualst...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/weixin_41221000">来自：	<span class="blog_title"> weixin_41221000的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+          <div class="recommend-item-box blog-expert-recommend-box">
+				<div class="d-flex">
+					<div class="blog-expert-recommend">
+						<div class="blog-expert">
+							<div class="blog-expert-flexbox"></div>
+						</div>
+					</div>
+				</div>
+      </div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wanghu2008/article/details/83717111,BlogCommendFromThirdService_10"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/wanghu2008/article/details/83717111" target="_blank" title="C#将用户自定义控件添加到工具箱中">
+				<h4 class="text-truncate oneline">
+						<em>C#</em>将用户<em>自定义控件</em>添加到工具箱中				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-04</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1232</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/wanghu2008/article/details/83717111" target="_blank" title="C#将用户自定义控件添加到工具箱中">
+							<span class="desc oneline">组装用户自定义的窗体为了复用和便于维护，在C#中如何用已有窗体组装自己的窗体，并且可以在以后需要的时候随意拖拽使用？在项目或项目中的某个文件夹上右键——添加——用户控件然后就可以编辑了。将用户自定义控...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/wanghu2008">来自：	<span class="blog_title"> wanghu2008的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wangzl1163/article/details/71107560,BlogCommendFromBaidu_11"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/wangzl1163/article/details/71107560" target="_blank" title="WinForm创建自定义控件">
+				<h4 class="text-truncate oneline">
+						WinForm<em>创建</em><em>自定义控件</em>				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">05-03</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/wangzl1163/article/details/71107560" target="_blank" title="WinForm创建自定义控件">
+							<span class="desc oneline">虽然VS为我们提供了很多控件可以使用，但有时候这些控件仍然不能满足我们的要求，比如我们要对部分控件进行一些个性化的定制，例如美化控件，这时候就需要自己绘制控件，或是在原有控件的基础上进行修改自定义控件...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/wangzl1163">来自：	<span class="blog_title"> 养家心法</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/zjwen2007/10205652,BlogCommendFromBaidu_12"}'>
+			<a href="https://download.csdn.net/download/zjwen2007/10205652" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>C#</em><em>自定义控件</em>开发demo						</h4>
+						<span class="data float-right">01-15</span>
+					</div>
+					<div class="desc oneline">
+							这是C#winform开发的自定义控件集，常用的控件都有，涉及到自定义控件的知识，以及如何美化控件。需要的朋友下载。					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_61" data-pid="61" data-track-view='{"mod":"kp_popu_61-809","con":",,"}' data-track-click='{"mod":"kp_popu_61-809","con":",,"}'><script
+    async="async"
+    charset="utf-8"
+    src="https://shared.ydstatic.com/js/yatdk/3.0.1/stream.js"
+    data-id="6cb24153a03289ff3597c7aab4b69fe9"
+    data-div-Style="width:100%;"
+data-tit-Style="margin-bottom: 6px; font-size: 18px; line-height: 24px; color: #3d3d3d;display: inline-block;font-weight:bold;"
+data-des-Style="font-size: 13px; line-height: 22px; white-space: normal; color: #999;"
+data-img-Style="float:left;margin-right:15px;width:90px;height:60px;">
+</script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/whuarui2010/article/details/8063565,BlogCommendFromBaidu_13"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/whuarui2010/article/details/8063565" target="_blank" title="C#开发之自定义控件的简单使用">
+				<h4 class="text-truncate oneline">
+						<em>C#</em>开发之<em>自定义控件</em>的简单使用				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-12</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/whuarui2010/article/details/8063565" target="_blank" title="C#开发之自定义控件的简单使用">
+							<span class="desc oneline">1.开发自定义控件自定义控件在开发中算常用的技术，因为在解决实际问题时往往.NETFramework提供的控件不能满足所有的需求，还好可以根据.NETFramework提供的基础控件组合扩展成自定义控...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/whuarui2010">来自：	<span class="blog_title"> whuarui2010的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_387","con":",http://ask.csdn.net/questions/681362,BlogCommendFromBaidu_14"}'>
+		<a href="http://ask.csdn.net/questions/681362" target="_blank">
+			<h4 class="text-truncate oneline">
+					<em>C#</em> winform 自定义线段控件			</h4>
+			<div class="info-box d-flex align-content-center">
+					<span class="date">03-05</span>
+			</div>
+			<p class="content oneline">
+        <span class="desc oneline">-</span>
+                  <span class="type-show type-show-ask">问答</span>
+        			</p>
+		</a>
+
+	</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/aoshilang2249/article/details/41252781,BlogCommendFromBaidu_15"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/aoshilang2249/article/details/41252781" target="_blank" title="C# WinForm 封装自定义组件(控件)Dll">
+				<h4 class="text-truncate oneline">
+						<em>C#</em> WinForm 封装自定义组件(控件)Dll				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-18</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							9463</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/aoshilang2249/article/details/41252781" target="_blank" title="C# WinForm 封装自定义组件(控件)Dll">
+							<span class="desc oneline">封装自定义控件很简单，没什么技术含量，这里通过封装自定义的数字文本框实例简单总结一下：【1】新建自定义控件库--WindowsFormsControlLibrary【2】添加自定义组件--Compon...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/aoshilang2249">来自：	<span class="blog_title"> 郎涯工作室</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u010153703/article/details/38408159,BlogCommendFromBaidu_16"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/u010153703/article/details/38408159" target="_blank" title="C#的自定义控件">
+				<h4 class="text-truncate oneline">
+						<em>C#</em>的<em>自定义控件</em>				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">08-06</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2767</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/u010153703/article/details/38408159" target="_blank" title="C#的自定义控件">
+							<span class="desc oneline">C#的UserControl让用户自定义控件容易了很多，创建WindowsFormsControlLibrary工程，自定义UserControl，生成的.dll加入到任何新工程，就能在新工程中使用自...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/u010153703">来自：	<span class="blog_title"> 一只飞鸟的自白</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/ping3108/7855757,BlogCommendFromBaidu_17"}'>
+			<a href="https://download.csdn.net/download/ping3108/7855757" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							分享<em>C#</em> WinForm类库控件（GduUI类库）						</h4>
+						<span class="data float-right">09-02</span>
+					</div>
+					<div class="desc oneline">
+							之前分享过我自己写的WinForm界面库，大家可以再看看这个帖子：http://bbs.csdn.net/topics/390833504，现在类库增加了几个控件，同样分享全部源码给大家，希望大家下载					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-809","con":",,"}' data-track-click='{"mod":"kp_popu_62-809","con":",,"}'><script
+    async="async"
+    charset="utf-8"
+    src="https://shared.ydstatic.com/js/yatdk/3.0.1/stream.js"
+    data-id="6cb24153a03289ff3597c7aab4b69fe9"
+    data-div-Style="width:100%;"
+data-tit-Style="margin-bottom: 6px; font-size: 18px; line-height: 24px; color: #3d3d3d;display: inline-block;font-weight:bold;"
+data-des-Style="font-size: 13px; line-height: 22px; white-space: normal; color: #999;"
+data-img-Style="float:left;margin-right:15px;width:90px;height:60px;">
+</script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_387","con":",https://bbs.csdn.net/topics/330121996,BlogCommendFromBaidu_18"}'>
+		<a href="https://bbs.csdn.net/topics/330121996" target="_blank">
+			<h4 class="text-truncate oneline">
+					在<em>C#</em>中如何动态动态生成一个枚举类型			</h4>
+			<div class="info-box d-flex align-content-center">
+					<span class="date">02-28</span>
+			</div>
+			<p class="content oneline">
+        <span class="desc oneline">各位大师，我现在遇到一个问题，请给予解决办法，十分感谢！就是我想在程序中生成一个枚举类型，但是该枚举类型的元素需要从配置表中读取，请问该怎么解决！！！急等！！！</span>
+                  <span class="type-show type-show-bbs">论坛</span>
+        			</p>
+		</a>
+
+	</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/onesilver/article/details/77882908,BlogCommendFromBaidu_19"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/onesilver/article/details/77882908" target="_blank" title="推荐一款免费的C#界面库">
+				<h4 class="text-truncate oneline">
+						推荐一款免费的<em>C#</em>界面库				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">09-07</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/onesilver/article/details/77882908" target="_blank" title="推荐一款免费的C#界面库">
+							<span class="desc oneline">免费的C#界面库</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/onesilver">来自：	<span class="blog_title"> 一两银子</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_387","con":",https://bbs.csdn.net/topics/392160321,BlogCommendFromBaidu_20"}'>
+		<a href="https://bbs.csdn.net/topics/392160321" target="_blank">
+			<h4 class="text-truncate oneline">
+					<em>C#</em>自定义属性如何显示下拉框？			</h4>
+			<div class="info-box d-flex align-content-center">
+					<span class="date">04-25</span>
+			</div>
+			<p class="content oneline">
+        <span class="desc oneline">namespace DataBaseType { public partial class Form1 : Form { public static string filename = null; p</span>
+                  <span class="type-show type-show-bbs">论坛</span>
+        			</p>
+		</a>
+
+	</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/clb929/article/details/54692704,BlogCommendFromBaidu_21"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/clb929/article/details/54692704" target="_blank" title="WinForm自定义控件">
+				<h4 class="text-truncate oneline">
+						WinForm<em>自定义控件</em>				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">01-23</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							444</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/clb929/article/details/54692704" target="_blank" title="WinForm自定义控件">
+							<span class="desc oneline">原文地址：http://www.cnblogs.com/bomo/archive/2012/12/09/2810559.htmlhttp://www.cnblogs.com/bomo/archive/...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/clb929">来自：	<span class="blog_title"> 阿斌(Ben)的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u010412719/article/details/51596914,BlogCommendFromBaidu_22"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/u010412719/article/details/51596914" target="_blank" title="《C#中自定义控件并在Form中进行调用》">
+				<h4 class="text-truncate oneline">
+						《<em>C#</em>中<em>自定义控件</em>并在Form中进行调用》				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-06</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4943</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/u010412719/article/details/51596914" target="_blank" title="《C#中自定义控件并在Form中进行调用》">
+							<span class="desc oneline">C#自定义控件并在Form中进行调用由于项目的原因，要使用C#来实现一个演示系统，具体功能为：上位机使用TCP/IP协议通过网口发送数据，FPGA从网口抓取数据并进行一些处理，最后，将处理后的数据通过...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/u010412719">来自：	<span class="blog_title"> wojiushimogui的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_63" data-pid="63" data-track-view='{"mod":"kp_popu_63-809","con":",,"}' data-track-click='{"mod":"kp_popu_63-809","con":",,"}'><script
+    async="async"
+    charset="utf-8"
+    src="https://shared.ydstatic.com/js/yatdk/3.0.1/stream.js"
+    data-id="6cb24153a03289ff3597c7aab4b69fe9"
+    data-div-Style="width:100%;"
+data-tit-Style="margin-bottom: 6px; font-size: 18px; line-height: 24px; color: #3d3d3d;display: inline-block;font-weight:bold;"
+data-des-Style="font-size: 13px; line-height: 22px; white-space: normal; color: #999;"
+data-img-Style="float:left;margin-right:15px;width:90px;height:60px;">
+</script></div></div>
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/flyking2/10178121,BlogCommendFromBaidu_23"}'>
+			<a href="https://download.csdn.net/download/flyking2/10178121" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>C#</em><em>自定义控件</em>美化CheckButton						</h4>
+						<span class="data float-right">12-28</span>
+					</div>
+					<div class="desc oneline">
+							C#一个自定义的CheckButton,可以设置选择框的颜色,放到自己的项目里面可拖到工具箱使用					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_387","con":",http://ask.csdn.net/questions/363426,BlogCommendFromBaidu_24"}'>
+		<a href="http://ask.csdn.net/questions/363426" target="_blank">
+			<h4 class="text-truncate oneline">
+					winform 如何自定义组件，让它变成如下图的样式			</h4>
+			<div class="info-box d-flex align-content-center">
+					<span class="date">02-16</span>
+			</div>
+			<p class="content oneline">
+        <span class="desc oneline">-</span>
+                  <span class="type-show type-show-ask">问答</span>
+        			</p>
+		</a>
+
+	</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq_43053398/article/details/84321542,BlogCommendFromBaidu_25"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qq_43053398/article/details/84321542" target="_blank" title="C#用户自定义控件编写">
+				<h4 class="text-truncate oneline">
+						<em>C#</em>用户<em>自定义控件</em>编写				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-21</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							269</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qq_43053398/article/details/84321542" target="_blank" title="C#用户自定义控件编写">
+							<span class="desc oneline">1、	创建一个用户控件，编写XAML以及.cs2、	Xaml中可以定义样式以及转换，具体转换函数在.cs中写&amp;amp;lt;Grid.Resources&amp;amp;gt;&amp;amp;lt;StyleTar...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qq_43053398">来自：	<span class="blog_title"> 你不认识的22的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_387","con":",http://ask.csdn.net/questions/243179,BlogCommendFromBaidu_26"}'>
+		<a href="http://ask.csdn.net/questions/243179" target="_blank">
+			<h4 class="text-truncate oneline">
+					winform<em>自定义控件</em>怎样完全透明			</h4>
+			<div class="info-box d-flex align-content-center">
+					<span class="date">03-16</span>
+			</div>
+			<p class="content oneline">
+        <span class="desc oneline">-</span>
+                  <span class="type-show type-show-ask">问答</span>
+        			</p>
+		</a>
+
+	</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_387","con":",https://bbs.csdn.net/topics/120102396,BlogCommendFromBaidu_27"}'>
+		<a href="https://bbs.csdn.net/topics/120102396" target="_blank">
+			<h4 class="text-truncate oneline">
+					<em>C#</em>如何调用<em>自定义控件</em>(急)			</h4>
+			<div class="info-box d-flex align-content-center">
+					<span class="date">09-15</span>
+			</div>
+			<p class="content oneline">
+        <span class="desc oneline">我创建了一个自定义颜色控件public partial class CustomControl1 : Contr,但想通过原来Form窗体中的一个Button 来调用这个自定义控件,如何调用?高手指教</span>
+                  <span class="type-show type-show-bbs">论坛</span>
+        			</p>
+		</a>
+
+	</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-809","con":",,"}' data-track-click='{"mod":"kp_popu_64-809","con":",,"}'><script
+    async="async"
+    charset="utf-8"
+    src="https://shared.ydstatic.com/js/yatdk/3.0.1/stream.js"
+    data-id="6cb24153a03289ff3597c7aab4b69fe9"
+    data-div-Style="width:100%;"
+data-tit-Style="margin-bottom: 6px; font-size: 18px; line-height: 24px; color: #3d3d3d;display: inline-block;font-weight:bold;"
+data-des-Style="font-size: 13px; line-height: 22px; white-space: normal; color: #999;"
+data-img-Style="float:left;margin-right:15px;width:90px;height:60px;">
+</script></div></div>
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/u011234288/10205054,BlogCommendFromBaidu_28"}'>
+			<a href="https://download.csdn.net/download/u011234288/10205054" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>c#</em> 美观的<em>自定义控件</em>按钮						</h4>
+						<span class="data float-right">01-14</span>
+					</div>
+					<div class="desc oneline">
+							很美观，通过checkbox绘制的自定义控件，有七八个外观形式，可作为按钮、开关等					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wang463584281/article/details/50720683,BlogCommendFromBaidu_29"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/wang463584281/article/details/50720683" target="_blank" title="C# 自定义控件的实现">
+				<h4 class="text-truncate oneline">
+						<em>C#</em> <em>自定义控件</em>的实现				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-23</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							5043</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/wang463584281/article/details/50720683" target="_blank" title="C# 自定义控件的实现">
+							<span class="desc oneline">http://www.cnblogs.com/wuhuacong/p/3968544.htmlWinform开发中常见界面的DevExpress处理操作我们在开发Winform程序的时候，需要经常性的...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/wang463584281">来自：	<span class="blog_title"> wang463584281的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_387","con":",https://bbs.csdn.net/topics/391897618,BlogCommendFromBaidu_30"}'>
+		<a href="https://bbs.csdn.net/topics/391897618" target="_blank">
+			<h4 class="text-truncate oneline">
+					用户<em>自定义控件</em>的单击事件问题			</h4>
+			<div class="info-box d-flex align-content-center">
+					<span class="date">01-27</span>
+			</div>
+			<p class="content oneline">
+        <span class="desc oneline">有一个用户自定义控件，上面有一个Label和一个PictureBox，在Form中添加该控件，名称是control1，它的单击事件是control1_Click，但是点击到PictureBox或者La</span>
+                  <span class="type-show type-show-bbs">论坛</span>
+        			</p>
+		</a>
+
+	</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq_22955427/article/details/76252582,BlogCommendFromBaidu_31"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qq_22955427/article/details/76252582" target="_blank" title="C#自定义控件实现窗体绘制表格">
+				<h4 class="text-truncate oneline">
+						<em>C#</em><em>自定义控件</em>实现窗体绘制表格				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">07-28</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							6894</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qq_22955427/article/details/76252582" target="_blank" title="C#自定义控件实现窗体绘制表格">
+							<span class="desc oneline">C#自定义控件</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qq_22955427">来自：	<span class="blog_title"> IN</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/yysyangyangyangshan/article/details/7078471,BlogCommendFromBaidu_32"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/yysyangyangyangshan/article/details/7078471" target="_blank" title="C#中的自定义控件">
+				<h4 class="text-truncate oneline">
+						<em>C#</em>中的<em>自定义控件</em>				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-16</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/yysyangyangyangshan/article/details/7078471" target="_blank" title="C#中的自定义控件">
+							<span class="desc oneline">一般在开发Winform项目中，visualstudio提供的控件基本能满足我们的需求。但是，往往在一些情况下，系统提供的控件并不能刚好满足需求，如果完全使用以提供好的控件，也可以完成效果需求，但是可...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/yysyangyangyangshan">来自：	<span class="blog_title"> 杨友山</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-809","con":",,"}' data-track-click='{"mod":"kp_popu_65-809","con":",,"}'><script
+    async="async"
+    charset="utf-8"
+    src="https://shared.ydstatic.com/js/yatdk/3.0.1/stream.js"
+    data-id="6cb24153a03289ff3597c7aab4b69fe9"
+    data-div-Style="width:100%;"
+data-tit-Style="margin-bottom: 6px; font-size: 18px; line-height: 24px; color: #3d3d3d;display: inline-block;font-weight:bold;"
+data-des-Style="font-size: 13px; line-height: 22px; white-space: normal; color: #999;"
+data-img-Style="float:left;margin-right:15px;width:90px;height:60px;">
+</script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/crazyliyang/article/details/73800312,BlogCommendFromBaidu_33"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/crazyliyang/article/details/73800312" target="_blank" title="c#简单的自定义控件">
+				<h4 class="text-truncate oneline">
+						<em>c#</em>简单的<em>自定义控件</em>				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-27</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							999</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/crazyliyang/article/details/73800312" target="_blank" title="c#简单的自定义控件">
+							<span class="desc oneline">今天抽了点时间，尝试了做了个用户自定义控件，自定义控件分3类：符合控件，扩展控件，自定义控件；觉得明白了一些原理，赶紧记录下来，巩固下：其实就是做了个简单按钮，让她加上图片；1：首先在vs2015上创...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/crazyliyang">来自：	<span class="blog_title"> crazyliyang的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_387","con":",http://ask.csdn.net/questions/686498,BlogCommendFromBaidu_34"}'>
+		<a href="http://ask.csdn.net/questions/686498" target="_blank">
+			<h4 class="text-truncate oneline">
+					用<em>C#</em>语言在VisualStudio中<em>自定义控件</em>时，如何在设计器窗口下实时看到预览效果(图形效果)？			</h4>
+			<div class="info-box d-flex align-content-center">
+					<span class="date">04-20</span>
+			</div>
+			<p class="content oneline">
+        <span class="desc oneline">-</span>
+                  <span class="type-show type-show-ask">问答</span>
+        			</p>
+		</a>
+
+	</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_387","con":",http://ask.csdn.net/questions/273678,BlogCommendFromBaidu_35"}'>
+		<a href="http://ask.csdn.net/questions/273678" target="_blank">
+			<h4 class="text-truncate oneline">
+					<em>C#</em> mvc 怎样写<em>自定义控件</em>？			</h4>
+			<div class="info-box d-flex align-content-center">
+					<span class="date">08-04</span>
+			</div>
+			<p class="content oneline">
+        <span class="desc oneline">-</span>
+                  <span class="type-show type-show-ask">问答</span>
+        			</p>
+		</a>
+
+	</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/Im1smb/article/details/75577438,BlogCommendFromBaidu_36"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/Im1smb/article/details/75577438" target="_blank" title="C#如何创建自定义控件以及添加自定义属性和事件使用">
+				<h4 class="text-truncate oneline">
+						<em>C#</em>如何<em>创建</em><em>自定义控件</em>以及添加自定义属性和事件使用				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">07-20</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							8899</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/Im1smb/article/details/75577438" target="_blank" title="C#如何创建自定义控件以及添加自定义属性和事件使用">
+							<span class="desc oneline">C#本身提供了很强大的控件库，但是很多控件库的功能只是一些基本的功能，就比如最简单的按钮，C#提供了最基础的按钮使用方法，但是如果要增加一些功能，比如按钮按下要一个图片，弹起要另一个图片这样的工作。当...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/Im1smb">来自：	<span class="blog_title"> Im1smb的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/sxausgyy/article/details/17082951,BlogCommendFromBaidu_37"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/sxausgyy/article/details/17082951" target="_blank" title="C#编写自定义控件心得">
+				<h4 class="text-truncate oneline">
+						<em>C#</em>编写<em>自定义控件</em>心得				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-02</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1747</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/sxausgyy/article/details/17082951" target="_blank" title="C#编写自定义控件心得">
+							<span class="desc oneline">有些东西,从MSDN中很不容易找到,比如对一些属性的描述设定.这里可以为此做一些汇兑.   我设计了一个平滑进度条自定义C#控件,这在网上很容易找到一些现成的.不过,为了学习自定义C#控件的设计,我还...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/sxausgyy">来自：	<span class="blog_title"> 疯狂的左脑！</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_66" data-pid="66" data-track-view='{"mod":"kp_popu_66-881","con":",,"}' data-track-click='{"mod":"kp_popu_66-881","con":",,"}'><script src="https://nbrecsys.4paradigm.com/resource/cus/csdn/sdk-csdn-render.js"></script>
+<div
+  id="_4paradigm_T38_render"
+  class="_paradigm_T_ads_render _4paradigm_box recommend-item-box clearfix"
+></div>
+<script>
+  //  渲染T38  传入 渲染位置的id和渲染位置的标记
+  p4CSDNRender_T("_4paradigm_T38_render", "T38");
+</script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wangjihuanghun/article/details/53131233,BlogCommendFromBaidu_38"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/wangjihuanghun/article/details/53131233" target="_blank" title="Winform自定义控件—Button（上）">
+				<h4 class="text-truncate oneline">
+						Winform<em>自定义控件</em>—Button（上）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-11</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							7051</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/wangjihuanghun/article/details/53131233" target="_blank" title="Winform自定义控件—Button（上）">
+							<span class="desc oneline">在开发中用的最多的相信就是Button控件，但是Button本身是在是太丑陋了，自己还背景图还会产生&quot;黑线&quot;,为了使用方便，并且美观，我们采用迂回的方式来实现Button的效果。在这里使用UserCo...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/wangjihuanghun">来自：	<span class="blog_title"> landptf的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/jackylynn/596551,BlogCommendFromBaidu_39"}'>
+			<a href="https://download.csdn.net/download/jackylynn/596551" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							漂亮强大的<em>c#</em>各种<em>自定义控件</em>						</h4>
+						<span class="data float-right">08-31</span>
+					</div>
+					<div class="desc oneline">
+							这是对VS2005自带控件的外观和功能的扩展，新控件非常漂亮，可以自选风格。并且有些控件功能狠强大。用法是把它解压到你项目目录－bin目录-debug目录下，然后打开项目添加引用它，最后在VS2005					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/lcj401175209/article/details/52953971,BlogCommendFromBaidu_40"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/lcj401175209/article/details/52953971" target="_blank" title="C#自定义控件之-自定义MessageBox">
+				<h4 class="text-truncate oneline">
+						<em>C#</em><em>自定义控件</em>之-自定义MessageBox				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-28</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							7327</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/lcj401175209/article/details/52953971" target="_blank" title="C#自定义控件之-自定义MessageBox">
+							<span class="desc oneline">每次谈到系统自带的控件，博主就是各种不满意（应该不止我一个吧），这次也不例外，今天的主角是messagebox控件。任何开发者都无法直视当自己做的美观的软件弹出提示时居然是奇丑无比的系统自带提示框。同...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/lcj401175209">来自：	<span class="blog_title"> 微尘物联-联通无限</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/salangane0954/article/details/1549451,BlogCommendFromBaidu_41"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/salangane0954/article/details/1549451" target="_blank" title="在C#中创建自定义控件">
+				<h4 class="text-truncate oneline">
+						在<em>C#</em>中<em>创建</em><em>自定义控件</em>				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">04-02</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4531</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/salangane0954/article/details/1549451" target="_blank" title="在C#中创建自定义控件">
+							<span class="desc oneline">在C#中创建自定义控件创建自定义的控件有下面几种方法：1创建继承自UserControl的控件。对于这样的控件，它其实是一个控件的容器，你可以像设计一般的窗体一样设计它，因此，标准的控件都是可用的。当...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/salangane0954">来自：	<span class="blog_title"> salangane0954的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/keep_silence_/5020444,BlogCommendFromBaidu_42"}'>
+			<a href="https://download.csdn.net/download/keep_silence_/5020444" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>C#</em><em>自定义控件</em>库						</h4>
+						<span class="data float-right">01-22</span>
+					</div>
+					<div class="desc oneline">
+							C#自定义控件库					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_67" data-pid="67" data-track-view='{"mod":"kp_popu_67-882","con":",,"}' data-track-click='{"mod":"kp_popu_67-882","con":",,"}'><script src="https://nbrecsys.4paradigm.com/resource/cus/csdn/sdk-csdn-render.js"></script>
+<div
+  id="_4paradigm_T43_render"
+  class="_paradigm_T_ads_render _4paradigm_box recommend-item-box clearfix"
+></div>
+<script>
+  //  渲染T43  传入 渲染位置的id和渲染位置的标记
+  p4CSDNRender_T("_4paradigm_T43_render", "T43");
+</script></div></div>
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/culake/3811335,BlogCommendFromBaidu_43"}'>
+			<a href="https://download.csdn.net/download/culake/3811335" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>C#</em><em>自定义控件</em>的详细的开发流程(程序和图解)						</h4>
+						<span class="data float-right">11-18</span>
+					</div>
+					<div class="desc oneline">
+							C#自定义控件的详细的开发流程(程序和图解) 图文并茂 适合初学者以及老手					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/codepython/article/details/38684237,BlogCommendFromBaidu_44"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/codepython/article/details/38684237" target="_blank" title="C# WinForm控件、自定义控件整理（大全）">
+				<h4 class="text-truncate oneline">
+						<em>C#</em> WinForm控件、<em>自定义控件</em>整理（大全）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">08-19</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2575</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/codepython/article/details/38684237" target="_blank" title="C# WinForm控件、自定义控件整理（大全）">
+							<span class="desc oneline">C#WinForm控件、自定义控件整理（大全）对C#WinForm开发系列收集的控件使用方面进行整理,加入了一些文章,不断补充充实,完善这方面.基础-常用控件C#WinForm开发系列-CheckBo...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/codepython">来自：	<span class="blog_title"> codepython的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/nanmosiam/article/details/2155690,BlogCommendFromBaidu_45"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/nanmosiam/article/details/2155690" target="_blank" title="C#自定义控件的制作">
+				<h4 class="text-truncate oneline">
+						<em>C#</em><em>自定义控件</em>的制作				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">03-07</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1590</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/nanmosiam/article/details/2155690" target="_blank" title="C#自定义控件的制作">
+							<span class="desc oneline">C#自定义控件制作篇                                             该教程适合初学者，例子比较简单，只能起到抛石引玉的效果。希望大家能够充分发挥自己的想象做出...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/nanmosiam">来自：	<span class="blog_title"> nanmosiam的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/tianyitianyi1/article/details/7425755,BlogCommendFromBaidu_46"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/tianyitianyi1/article/details/7425755" target="_blank" title="C#编写自定义控件">
+				<h4 class="text-truncate oneline">
+						<em>C#</em>编写<em>自定义控件</em>				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">04-04</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							3782</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/tianyitianyi1/article/details/7425755" target="_blank" title="C#编写自定义控件">
+							<span class="desc oneline">学习自定义控件的开发不仅可以使你开发出更灵活的系统更重要的是它可以使你加深对已有服务器控件的理解，得以更灵活的应用。 较之于asp，asp.net提供了更强大的功能，我比较喜欢它的代码分离技术和对诸如...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/tianyitianyi1">来自：	<span class="blog_title"> tianyitianyi1的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/bb186/article/details/9003326,BlogCommendFromBaidu_47"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/bb186/article/details/9003326" target="_blank" title="C#自定义控件的3种方式">
+				<h4 class="text-truncate oneline">
+						<em>C#</em><em>自定义控件</em>的3种方式				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-01</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2414</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/bb186/article/details/9003326" target="_blank" title="C#自定义控件的3种方式">
+							<span class="desc oneline">很多时候我们需要使用到自定义控件而在C#中我们主要以3中方式创建自定义控件，还有些需要注意的地方时常被忽略比如Click事件,用户控件的Click并不像系统的Button单击1.继承自.NET类库中已...</span>
+						</a>
+						  <span class="blog_title_box oneline no-title">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_68" data-pid="68" data-track-view='{"mod":"kp_popu_68-883","con":",,"}' data-track-click='{"mod":"kp_popu_68-883","con":",,"}'><!-- T48 位置 -->
+<script src="https://nbrecsys.4paradigm.com/resource/cus/csdn/sdk-csdn-render.js"></script>
+<div
+  id="_4paradigm_T48_render"
+  class="_paradigm_T_ads_render _4paradigm_box recommend-item-box clearfix"
+></div>
+<script>
+  //  渲染T48  传入 渲染位置的id和渲染位置的标记
+  p4CSDNRender_T("_4paradigm_T48_render", "T48");
+</script></div></div>
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/hzj19800817/article/details/2545595,BlogCommendFromBaidu_48"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/hzj19800817/article/details/2545595" target="_blank" title="给大家分享一个自定义Winform控件类">
+				<h4 class="text-truncate oneline">
+						给大家分享一个自定义Winform控件类				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-14</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2628</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/hzj19800817/article/details/2545595" target="_blank" title="给大家分享一个自定义Winform控件类">
+							<span class="desc oneline">usingSystem;usingSystem.Collections.Generic;usingSystem.Drawing;usingSystem.Text;usingSystem.Windows...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/hzj19800817">来自：	<span class="blog_title"> hzj19800817的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/learn_change_myself/10223765,BlogCommendFromBaidu_49"}'>
+			<a href="https://download.csdn.net/download/learn_change_myself/10223765" target="_blank">
+				<div class="content clearfix">
+					<div class="">
+						<h4 class="text-truncate oneline clearfix">
+							<em>c#</em>美化<em>自定义控件</em>库						</h4>
+						<span class="data float-right">01-25</span>
+					</div>
+					<div class="desc oneline">
+							美化版的自定义控件库，UI界面要求比较高的同学可以拿去用					</div>
+          <span class="type-show type-show-download">下载</span>
+				</div>
+			</a>
+		</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/xiejiashu/article/details/34434669,BlogCommendHotData_0"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/xiejiashu/article/details/34434669" target="_blank" title="用live555将内网摄像机视频推送到外网服务器，附源码">
+				<h4 class="text-truncate oneline">
+						用live555将内网摄像机视频推送到外网服务器，附源码				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-25</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							3万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/xiejiashu/article/details/34434669" target="_blank" title="用live555将内网摄像机视频推送到外网服务器，附源码">
+							<span class="desc oneline">最近很多人问，如何将内网的摄像机流媒体数据发布到公网，如果用公网与局域网间的端口映射方式太过麻烦，一个摄像机要做一组映射，而且不是每一个局域网都是有固定ip地址，即使外网主机配置好了每一个摄像机的映射...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/xiejiashu">来自：	<span class="blog_title"> Babosa的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/FloraCHY/article/details/72769809,BlogCommendHotData_1"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/FloraCHY/article/details/72769809" target="_blank" title="Python2.7.13下载安装全过程（Windows版）">
+				<h4 class="text-truncate oneline">
+						Python2.7.13下载安装全过程（Windows版）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">05-26</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/FloraCHY/article/details/72769809" target="_blank" title="Python2.7.13下载安装全过程（Windows版）">
+							<span class="desc oneline">前提：
+    我下载的Python是windows版本的，演示过程是在win10 64位操作系统上安装的。
+
+
+
+1、下载
+    进入官网https://www.python.org/...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/FloraCHY">来自：	<span class="blog_title"> Flora's Zone</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/lk_blog/article/details/8007777,BlogCommendHotData_2"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/lk_blog/article/details/8007777" target="_blank" title="配置简单功能强大的excel工具类搞定excel导入导出工具类(一)">
+				<h4 class="text-truncate oneline">
+						配置简单功能强大的excel工具类搞定excel导入导出工具类(一)				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">09-22</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							5万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/lk_blog/article/details/8007777" target="_blank" title="配置简单功能强大的excel工具类搞定excel导入导出工具类(一)">
+							<span class="desc oneline">对于J2EE项目导入导出Excel是最普通和实用功能,本工具类使用步骤简单,功能强大,只需要对实体类进行简单的注解就能实现导入导出功能,导入导出操作的都是实体对象.
+请看一下这个类都有哪些功能:
+  ...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/lk_blog">来自：	<span class="blog_title"> 李坤 大米时代 第五期</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/ymj7150697/article/details/7384126,BlogCommendHotData_3"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/ymj7150697/article/details/7384126" target="_blank" title="expat介绍文档翻译">
+				<h4 class="text-truncate oneline">
+						expat介绍文档翻译				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">03-22</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							5万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/ymj7150697/article/details/7384126" target="_blank" title="expat介绍文档翻译">
+							<span class="desc oneline">原文地址：http://www.xml.com/pub/a/1999/09/expat/index.html
+
+
+因为需要用，所以才翻译了这个文档。但总归赖于英语水平很有限，翻译出来的中文有可能...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/ymj7150697">来自：	<span class="blog_title"> ymj7150697的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/diandianxiyu/article/details/53068012,BlogCommendHotData_4"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/diandianxiyu/article/details/53068012" target="_blank" title="【小程序】微信小程序开发实践">
+				<h4 class="text-truncate oneline">
+						【小程序】微信小程序开发实践				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-07</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							28万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/diandianxiyu/article/details/53068012" target="_blank" title="【小程序】微信小程序开发实践">
+							<span class="desc oneline">帐号相关流程注册范围
+企业
+政府
+媒体
+其他组织换句话讲就是不让个人开发者注册。 :)填写企业信息不能使用和之前的公众号账户相同的邮箱,也就是说小程序是和微信公众号一个层级的。填写公司机构信息,对公账...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/diandianxiyu">来自：	<span class="blog_title"> 小雨同学的技术博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/cs_assult/article/details/46495379,BlogCommendHotData_5"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/cs_assult/article/details/46495379" target="_blank" title="ucore操作系统lab2实验报告">
+				<h4 class="text-truncate oneline">
+						ucore操作系统lab2实验报告				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-14</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							5447</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/cs_assult/article/details/46495379" target="_blank" title="ucore操作系统lab2实验报告">
+							<span class="desc oneline">练习1：实现 first-fit 连续物理内存分配算法
+在实现first fit 内存分配算法的回收函数时，要考虑地址连续的空闲块之间的合并操作。提示:在建立空闲页块链表时，需要按照空闲页块起始地址来...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/cs_assult">来自：	<span class="blog_title"> cs_assult的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/yangwei282367751/article/details/52426911,BlogCommendHotData_6"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/yangwei282367751/article/details/52426911" target="_blank" title="关于计算时间复杂度和空间复杂度">
+				<h4 class="text-truncate oneline">
+						关于计算时间复杂度和空间复杂度				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">09-04</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							6万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/yangwei282367751/article/details/52426911" target="_blank" title="关于计算时间复杂度和空间复杂度">
+							<span class="desc oneline">相信学习编程的同学，或多或少都接触到算法的时间复杂度和空间复杂度了，那我来讲讲怎么计算。
+       常用的算法的时间复杂度和空间复杂度 一，求解算法的时间复杂度，其具体步骤是：
+
+　　⑴ 找出算法...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/yangwei282367751">来自：	<span class="blog_title"> 杨威的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/opensure/article/details/46453681,BlogCommendHotData_7"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/opensure/article/details/46453681" target="_blank" title="Hbase 布隆过滤器BloomFilter介绍">
+				<h4 class="text-truncate oneline">
+						Hbase 布隆过滤器BloomFilter介绍				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-11</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							3万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/opensure/article/details/46453681" target="_blank" title="Hbase 布隆过滤器BloomFilter介绍">
+							<span class="desc oneline">1、主要功能
+
+提高随机读的性能
+
+
+
+
+2、存储开销
+
+bloom filter的数据存在StoreFile的meta中，一旦写入无法更新，因为StoreFile是不可变的。Bloomfilter是...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/opensure">来自：	<span class="blog_title"> opensure的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wild46cat/article/details/54572361,BlogCommendHotData_8"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/wild46cat/article/details/54572361" target="_blank" title="webService学习（二）—— 调用自定义对象参数">
+				<h4 class="text-truncate oneline">
+						webService学习（二）—— 调用自定义对象参数				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">01-16</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/wild46cat/article/details/54572361" target="_blank" title="webService学习（二）—— 调用自定义对象参数">
+							<span class="desc oneline">webService学习（二）—— 调用自定义对象参数
+本文主要内容：
+1、如何通过idea进行webService Client的简单实现（不再使用wsimport的方式，其实是ide帮我们做了...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/wild46cat">来自：	<span class="blog_title">  止水的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u012903992/article/details/17271929,BlogCommendHotData_9"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/u012903992/article/details/17271929" target="_blank" title="Windows平台SSH服务器架设攻略">
+				<h4 class="text-truncate oneline">
+						Windows平台SSH服务器架设攻略				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-11</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1861</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/u012903992/article/details/17271929" target="_blank" title="Windows平台SSH服务器架设攻略">
+							<span class="desc oneline">SSH是一种以安全、加密方式连接远程主机或服务器的方法。SSH服务器接受从有SSH的客户机的连接，允许操作者象在本地一样地登录系统。你可以用SSH从远程运行shell和X程序。它是一种服务器维护管理的...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/u012903992">来自：	<span class="blog_title"> 天涯路的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/silentpebble/article/details/41279285,BlogCommendHotData_10"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/silentpebble/article/details/41279285" target="_blank" title="centos 查看命令源码">
+				<h4 class="text-truncate oneline">
+						centos 查看命令源码				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-19</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							10万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/silentpebble/article/details/41279285" target="_blank" title="centos 查看命令源码">
+							<span class="desc oneline"># yum install yum-utils
+
+
+设置源:
+[base-src]
+name=CentOS-5.4 - Base src -
+baseurl=http://vault.ce...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/silentpebble">来自：	<span class="blog_title"> linux/unix</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/maoyuanming0806/article/details/78067446,BlogCommendHotData_11"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/maoyuanming0806/article/details/78067446" target="_blank" title="搭建图片服务器《二》-linux安装nginx">
+				<h4 class="text-truncate oneline">
+						搭建图片服务器《二》-linux安装nginx				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">09-22</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							6万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/maoyuanming0806/article/details/78067446" target="_blank" title="搭建图片服务器《二》-linux安装nginx">
+							<span class="desc oneline">nginx是个好东西，Nginx (engine x) 是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP服务器。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambl...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/maoyuanming0806">来自：	<span class="blog_title"> maoyuanming0806的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/jason0539/article/details/23297037,BlogCommendHotData_12"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/jason0539/article/details/23297037" target="_blank" title="JAVA设计模式之单例模式">
+				<h4 class="text-truncate oneline">
+						JAVA设计模式之单例模式				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">04-16</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							77万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/jason0539/article/details/23297037" target="_blank" title="JAVA设计模式之单例模式">
+							<span class="desc oneline">概念：
+　　java中单例模式是一种常见的设计模式，单例模式分三种：懒汉式单例、饿汉式单例、登记式单例三种。
+　　单例模式有一下特点：
+　　1、单例类只能有一个实例。
+　　2、单例类必须自己自己创建自...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/jason0539">来自：	<span class="blog_title"> 一个本科小生的奋斗史</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq_36892341/article/details/73918672,BlogCommendHotData_13"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qq_36892341/article/details/73918672" target="_blank" title="linux上安装Docker(非常简单的安装方法)">
+				<h4 class="text-truncate oneline">
+						linux上安装Docker(非常简单的安装方法)				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-29</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							24万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qq_36892341/article/details/73918672" target="_blank" title="linux上安装Docker(非常简单的安装方法)">
+							<span class="desc oneline">最近比较有空，大四出来实习几个月了，作为实习狗的我，被叫去研究Docker了，汗汗！
+
+Docker的三大核心概念：镜像、容器、仓库
+镜像：类似虚拟机的镜像、用俗话说就是安装文件。
+容器：类似一个轻量...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qq_36892341">来自：	<span class="blog_title"> 我走小路的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/meng564764406/article/details/52444644,BlogCommendHotData_14"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/meng564764406/article/details/52444644" target="_blank" title="将Excel文件导入数据库（POI+Excel+MySQL+jsp页面导入）第一次优化">
+				<h4 class="text-truncate oneline">
+						将Excel文件导入数据库（POI+Excel+MySQL+jsp页面导入）第一次优化				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">09-05</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/meng564764406/article/details/52444644" target="_blank" title="将Excel文件导入数据库（POI+Excel+MySQL+jsp页面导入）第一次优化">
+							<span class="desc oneline">本篇文章是根据我的上篇博客，给出的改进版，由于时间有限，仅做了一个简单的优化。相关文章：将excel导入数据库2018年4月1日，新增下载地址链接：点击打开源码下载地址十分抱歉，这个链接地址没有在这篇...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/meng564764406">来自：	<span class="blog_title"> Lynn_Blog</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/ganeshys2017/article/details/73694881,BlogCommendHotData_15"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/ganeshys2017/article/details/73694881" target="_blank" title="wamp黄色问题解决">
+				<h4 class="text-truncate oneline">
+						wamp黄色问题解决				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-24</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							910</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/ganeshys2017/article/details/73694881" target="_blank" title="wamp黄色问题解决">
+							<span class="desc oneline">http://blog.csdn.net/qq_32429977/article/details/50452529</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/ganeshys2017">来自：	<span class="blog_title"> ganeshys2017的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/jinshengtao/article/details/17797641,BlogCommendHotData_16"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/jinshengtao/article/details/17797641" target="_blank" title="Gabor滤波器学习">
+				<h4 class="text-truncate oneline">
+						Gabor滤波器学习				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">01-03</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							9万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/jinshengtao/article/details/17797641" target="_blank" title="Gabor滤波器学习">
+							<span class="desc oneline">本文的目的是用C实现生成Gabor模版，并对图像卷积。并简单提一下，Gabor滤波器在纹理特征提取上的应用。
+一、什么是Gabor函数（以下内容含部分翻译自维基百科）
+  在图像处理中，Gabor...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/jinshengtao">来自：	<span class="blog_title"> Where there is life, there is hope</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/HNSD983704669/article/details/46441531,BlogCommendHotData_17"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/HNSD983704669/article/details/46441531" target="_blank" title="weka J48决策树学习">
+				<h4 class="text-truncate oneline">
+						weka J48决策树学习				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-10</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							8312</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/HNSD983704669/article/details/46441531" target="_blank" title="weka J48决策树学习">
+							<span class="desc oneline">Weka为一个Java基础上的机器学习工具，上手简单，并提供图形化界面，提供如分类、聚类、频繁项挖掘等工具，本篇文章主要写一下分类器算法中的J48算法及其实现。
+
+
+
+
+一、算法
+
+J4...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/HNSD983704669">来自：	<span class="blog_title"> 路远，漫步前行</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/a378881925/article/details/42835497,BlogCommendHotData_18"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/a378881925/article/details/42835497" target="_blank" title="Android 卸载监听详解">
+				<h4 class="text-truncate oneline">
+						Android 卸载监听详解				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">01-18</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							5万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/a378881925/article/details/42835497" target="_blank" title="Android 卸载监听详解">
+							<span class="desc oneline">目前市场上比较多的应用在用户卸载后会弹出意见反馈界面，比如360手机卫士，腾讯手机管家，应用宝等等，虽然本人不太认同其交互方式，但是在技术实现上还是可以稍微研究下的。其实要实现这个功能，最主要的就是监...</span>
+						</a>
+						  <span class="blog_title_box oneline no-title">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/hayixia606/article/details/79237220,BlogCommendHotData_19"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/hayixia606/article/details/79237220" target="_blank" title="微信支付V3微信公众号支付PHP教程(thinkPHP5公众号支付)/JSSDK的使用">
+				<h4 class="text-truncate oneline">
+						微信支付V3微信公众号支付PHP教程(thinkPHP5公众号支付)/JSSDK的使用				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-02</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							16万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/hayixia606/article/details/79237220" target="_blank" title="微信支付V3微信公众号支付PHP教程(thinkPHP5公众号支付)/JSSDK的使用">
+							<span class="desc oneline">扫二维码关注，获取更多技术分享
+
+
+  本文承接之前发布的博客《 微信支付V3微信公众号支付PHP教程/thinkPHP5公众号支付》必须阅读上篇文章后才可以阅读这篇文章。由于最近一段时间工作比较忙，...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/hayixia606">来自：	<span class="blog_title"> Marswill</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq574857122/article/details/16361033,BlogCommendHotData_20"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qq574857122/article/details/16361033" target="_blank" title="强连通分量及缩点tarjan算法解析">
+				<h4 class="text-truncate oneline">
+						强连通分量及缩点tarjan算法解析				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-16</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							61万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qq574857122/article/details/16361033" target="_blank" title="强连通分量及缩点tarjan算法解析">
+							<span class="desc oneline">强连通分量：
+简言之 就是找环（每条边只走一次，两两可达）
+孤立的一个点也是一个连通分量 
+ 
+使用tarjan算法 在嵌套的多个环中优先得到最大环( 最小环就是每个孤立点）
+ 
+定义：
+int Ti...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qq574857122">来自：	<span class="blog_title"> 九野的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/lsx991947534/article/details/45499205,BlogCommendHotData_21"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/lsx991947534/article/details/45499205" target="_blank" title="servlet+jsp实现过滤器，防止用户未登录访问">
+				<h4 class="text-truncate oneline">
+						servlet+jsp实现过滤器，防止用户未登录访问				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">05-05</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							3万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/lsx991947534/article/details/45499205" target="_blank" title="servlet+jsp实现过滤器，防止用户未登录访问">
+							<span class="desc oneline">我们可能经常会用到这一功能，比如有时，我们不希望用户没有进行登录访问后台的操作页面，而且这样的非法访问会让系统极为的不安全，所以我们常常需要进行登录才授权访问其它页面，否则只会出现登录页面，当然我的思...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/lsx991947534">来自：	<span class="blog_title"> 沉默的鲨鱼的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wuchengzeng/article/details/50037611,BlogCommendHotData_22"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/wuchengzeng/article/details/50037611" target="_blank" title="jquery/js实现一个网页同时调用多个倒计时(最新的)">
+				<h4 class="text-truncate oneline">
+						jquery/js实现一个网页同时调用多个倒计时(最新的)				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-25</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							48万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/wuchengzeng/article/details/50037611" target="_blank" title="jquery/js实现一个网页同时调用多个倒计时(最新的)">
+							<span class="desc oneline">jquery/js实现一个网页同时调用多个倒计时(最新的)
+
+最近需要网页添加多个倒计时. 查阅网络,基本上都是千遍一律的不好用. 自己按需写了个.希望对大家有用. 有用请赞一个哦!
+
+
+
+//js
+...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/wuchengzeng">来自：	<span class="blog_title"> Websites</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/weiyi556/article/details/51938467,BlogCommendHotData_23"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/weiyi556/article/details/51938467" target="_blank" title="MyEclipse与在线SVN（taocode）的使用（二）">
+				<h4 class="text-truncate oneline">
+						MyEclipse与在线SVN（taocode）的使用（二）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">07-18</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2048</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/weiyi556/article/details/51938467" target="_blank" title="MyEclipse与在线SVN（taocode）的使用（二）">
+							<span class="desc oneline">使用taocode作为SVN的服务器，地址http://code.taobao.org/
+
+在网站上注册和登录
+
+新建一个项目
+输入相关信息
+复制这个地址，一会要用
+下一步在MyEclipse中向SV...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/weiyi556">来自：	<span class="blog_title"> weiyi556的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/gefangshuai/article/details/50328451,BlogCommendHotData_24"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/gefangshuai/article/details/50328451" target="_blank" title="关于SpringBoot bean无法注入的问题（与文件包位置有关）">
+				<h4 class="text-truncate oneline">
+						关于SpringBoot bean无法注入的问题（与文件包位置有关）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-16</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							21万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/gefangshuai/article/details/50328451" target="_blank" title="关于SpringBoot bean无法注入的问题（与文件包位置有关）">
+							<span class="desc oneline">问题场景描述整个项目通过Maven构建，大致结构如下：
+核心Spring框架一个module spring-boot-base
+service和dao一个module server-core
+提供系统...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/gefangshuai">来自：	<span class="blog_title"> 开发随笔</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/DUANJIEFEI/article/details/46461049,BlogCommendHotData_25"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/DUANJIEFEI/article/details/46461049" target="_blank" title="算法经典面试题整理（java实现）">
+				<h4 class="text-truncate oneline">
+						算法经典面试题整理（java实现）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-11</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/DUANJIEFEI/article/details/46461049" target="_blank" title="算法经典面试题整理（java实现）">
+							<span class="desc oneline">以下从Java角度解释面试常见的算法和数据结构：字符串，链表，树，图，排序，递归 vs. 迭代，动态规划，位操作，概率问题，排列组合，以及一些需要寻找规律的题目。
+
+1. 字符串和数组
+
+字符...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/DUANJIEFEI">来自：	<span class="blog_title"> DUANJIEFEI的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/Tiaaaaa/article/details/58116346,BlogCommendHotData_26"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/Tiaaaaa/article/details/58116346" target="_blank" title="R语言逻辑回归、ROC曲线和十折交叉验证">
+				<h4 class="text-truncate oneline">
+						R语言逻辑回归、ROC曲线和十折交叉验证				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-27</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							6万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/Tiaaaaa/article/details/58116346" target="_blank" title="R语言逻辑回归、ROC曲线和十折交叉验证">
+							<span class="desc oneline">自己整理编写的逻辑回归模板，作为学习笔记记录分享。数据集用的是14个自变量Xi，一个因变量Y的australian数据集。
+
+
+1. 测试集和训练集3、7分组
+australian ...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/Tiaaaaa">来自：	<span class="blog_title"> Tiaaaaa的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/Luck_ZZ/article/details/79361497,BlogCommendHotData_27"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/Luck_ZZ/article/details/79361497" target="_blank" title="thymeleaf模板实现html5标签的非严格检查">
+				<h4 class="text-truncate oneline">
+						thymeleaf模板实现html5标签的非严格检查				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-24</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/Luck_ZZ/article/details/79361497" target="_blank" title="thymeleaf模板实现html5标签的非严格检查">
+							<span class="desc oneline">一、概述最近在springboot项目引入thymeleaf模板时，使用非严格标签时，运行会报错。默认thymeleaf模板对html5标签是严格检查的。二、在项目中加NekoHTML库在Maven中...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/Luck_ZZ">来自：	<span class="blog_title"> Luck_ZZ的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/xu__cg/article/details/52970885,BlogCommendHotData_28"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/xu__cg/article/details/52970885" target="_blank" title="Java设计模式学习06——静态代理与动态代理">
+				<h4 class="text-truncate oneline">
+						Java设计模式学习06——静态代理与动态代理				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-30</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/xu__cg/article/details/52970885" target="_blank" title="Java设计模式学习06——静态代理与动态代理">
+							<span class="desc oneline">一、代理模式为某个对象提供一个代理，从而控制这个代理的访问。代理类和委托类具有共同的父类或父接口，这样在任何使用委托类对象的地方都可以使用代理类对象替代。代理类负责请求的预处理、过滤、将请求分配给委托...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/xu__cg">来自：	<span class="blog_title"> 小小本科生成长之路</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u013224148/article/details/46400969,BlogCommendHotData_29"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/u013224148/article/details/46400969" target="_blank" title="php+MySQL图书管理系统(二)">
+				<h4 class="text-truncate oneline">
+						php+MySQL图书管理系统(二)				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-07</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/u013224148/article/details/46400969" target="_blank" title="php+MySQL图书管理系统(二)">
+							<span class="desc oneline">第五 添加数据库管理员数据与用户数据
+这个比较无聊 用java拼接了一下sql语句 然后写入数据库
+这个放在附件上传就好了
+
+
+第六 管理员与用户的登入验证
+
+1、验证码。验证码一般就是...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/u013224148">来自：	<span class="blog_title"> 得之我幸--失之我命</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/Apheal/article/details/79274647,BlogCommendHotData_30"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/Apheal/article/details/79274647" target="_blank" title="Keil 主题（配色方案）选择器 自带多适用主题">
+				<h4 class="text-truncate oneline">
+						Keil 主题（配色方案）选择器 自带多适用主题				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-06</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							9770</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/Apheal/article/details/79274647" target="_blank" title="Keil 主题（配色方案）选择器 自带多适用主题">
+							<span class="desc oneline"> 花了一天！因为要用Keil，又苦于主题不好看，一个个换主题又嫌麻烦，就写了这个东西。代码有点多，先放出配置步骤，源码在文末。V1.0，没有图片预览功能，但是随插件附赠几个类似VS的配色方案。 本是按...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/Apheal">来自：	<span class="blog_title"> Q1275918492</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+        <div class="recommend-item-box type_hot_word">
+            <div class="content clearfix">
+        <div class="word float-left">
+                          <span>
+            <a href="https://edu.csdn.net/combos/o363_l0_t " target="_blank">
+            设计制作学习          </a></span>
+                                  <span>
+            <a href="https://edu.csdn.net/courses/o5329_s5330_k " target="_blank">
+            机器学习教程          </a></span>
+                                  <span>
+            <a href="https://edu.csdn.net/courses/o280_s351_k " target="_blank">
+            Objective-C培训          </a></span>
+                                  <span>
+            <a href="https://edu.csdn.net/combos/o7115_s388_l0_t " target="_blank">
+            交互设计视频教程          </a></span>
+                                  <span>
+            <a href="https://edu.csdn.net/course/play/5599/104252 " target="_blank">
+            颜色模型          </a></span>
+                        </div>
+      </div>
+                  <div class="content clearfix">
+        <div class="float-left">
+                  <span>
+            <a href="https://www.csdn.net/gather_24/MtTaEg3sMDM5MS1ibG9n.html" target="_blank">
+            mysql关联查询两次本表</a>
+          </span>
+                  <span>
+            <a href="https://www.csdn.net/gather_10/MtjaIg3sMTUzMy1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
+            native底部 react</a>
+          </span>
+                  <span>
+            <a href="https://www.csdn.net/gather_1b/Ntzagg1sOTU3LWRvd25sb2Fk.html" target="_blank">
+            extjs glyph 图标</a>
+          </span>
+                  <span>
+            <a href="https://www.csdn.net/gather_4a/MtTaYgxsNTEtZWR1.html" target="_blank">
+            web自定义控件视频教程</a>
+          </span>
+                  <span>
+            <a href="https://www.csdn.net/gather_4a/MtjaQg1sNTAtZWR1.html" target="_blank">
+            数据库创建课程表</a>
+          </span>
+                </div>
+      </div>
+          </div>
+
+
+            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+		    <div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/chen18221987993">
+              <img src="https://avatar.csdn.net/8/1/8/3_chen18221987993.jpg" class="avatar_pic">
+                              <img src="https://g.csdnimg.cn/static/user-reg-year/1x/2.png" class="user-years">
+                          </a>
+            
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-mod="popu_379">
+                <a href="https://blog.csdn.net/chen18221987993" target="_blank" class="" id="uid">chen15271802122</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-mod="popu_379">
+                <a class="btn btn-sm btn-red-hollow attention" id="btnAttent">关注</a>
+            </span>
+        </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="7">
+                        <dt><a href="https://blog.csdn.net/chen18221987993?t=1">原创</a></dt>
+            <dd><a href="https://blog.csdn.net/chen18221987993?t=1"><span class="count">7</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="6">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">6</span></dd>
+        </dl>
+        <dl class="text-center" title="2">
+            <dt>喜欢</dt>
+            <dd><span class="count">2</span></dd>
+        </dl>
+        <dl class="text-center" title="2">
+            <dt>评论</dt>
+            <dd><span class="count">2</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="2级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-2"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="6222">
+                6222            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="163">
+                163            </dd>
+        </dl>
+        <dl title="1153087">
+            <dt>排名：</dt>
+            <dd>115万+</dd>
+        </dl>
+    </div>
+        <div class="badge-box d-flex">
+        <span>勋章：</span>
+        <div class="badge d-flex">
+                                                                                                 <div class="icon-badge" title="勤写标兵Lv1">
+                   <div class="mouse-box">
+                      <img src="https://g.csdnimg.cn/static/user-medal/qinxiebiaobing_l1_t1.svg" alt="">
+                      <div class="icon-arrow"></div>
+                   </div>
+                   <div class="grade-detail-box">
+                       <div class="pos-box">
+                           <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                <img src="https://g.csdnimg.cn/static/user-medal/qinxiebiaobing_l1_t1.svg" alt="">
+                               <p>勤写标兵Lv1</p>
+                           </div>
+                           <div class="right-box">
+                               授予每个自然周发布1篇到3篇原创IT博文的用户。本勋章将于次周上午根据用户上周的博文发布情况由系统自动颁发。                           </div>
+                       </div>
+                   </div>
+               </div>
+                              </div>
+        <script>
+            (function ($) {
+                setTimeout(function(){
+                    $('div.icon-badge.show-moment').removeClass('show-moment');
+                }, 5000);
+            })(window.jQuery)
+        </script>
+    </div>
+    </div>
+		    <div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-mod="popu_4" style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <div id="kp_box_56" data-pid="56" data-track-view='{"mod":"kp_popu_56-703","con":",,"}' data-track-click='{"mod":"kp_popu_56-703","con":",,"}'><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页左上视窗-20181120 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="7700527946"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>    </div>
+</div>
+		    <div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/chen18221987993/article/details/89839062" target="_blank">HAL  LM35单通道温度采集</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/chen18221987993/article/details/86062535" target="_blank">STM32实验一：跑马灯实验</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/chen18221987993/article/details/82625365" target="_blank">快速转到CSDN收藏文章</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/chen18221987993/article/details/80675675" target="_blank">python3.x   模块（库）的安装</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/chen18221987993/article/details/80674201" target="_blank">python3.x 实现天气查询</a>
+            </li>
+                    </ul>
+    </div>
+</div>
+		    		    <div id="asideCategory" class="aside-box">
+    <h3 class="aside-title">个人分类</h3>
+    <div class="aside-content">
+        <ul>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/chen18221987993/article/category/7732601">
+                    <span class="title oneline">python</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/chen18221987993/article/category/7959818">
+                    <span class="title oneline">c#学习</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/chen18221987993/article/category/8042706">
+                    <span class="title oneline">其他</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/chen18221987993/article/category/8593629">
+                    <span class="title oneline">STM32F103RET7系列</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+		    <div id="asideArchive" class="aside-box flexible-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/chen18221987993/article/month/2019/05">
+                    2019年5月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/chen18221987993/article/month/2019/01">
+                    2019年1月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/chen18221987993/article/month/2018/09">
+                    2018年9月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/chen18221987993/article/month/2018/08">
+                    2018年8月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/chen18221987993/article/month/2018/06">
+                    2018年6月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/chen18221987993/article/month/2017/12">
+                    2017年12月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+		    <div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-mod="popu_521">
+							<li>
+					<a href="https://blog.csdn.net/chen18221987993/article/details/81943438">C#自定义控件的创建</a>
+					<p class="read">阅读数 <span>4408</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/chen18221987993/article/details/80675675">python3.x   模块（库）的安装</a>
+					<p class="read">阅读数 <span>879</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/chen18221987993/article/details/86062535">STM32实验一：跑马灯实验</a>
+					<p class="read">阅读数 <span>320</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/chen18221987993/article/details/80674201">python3.x 实现天气查询</a>
+					<p class="read">阅读数 <span>236</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/chen18221987993/article/details/78707190">STM32定时器中断</a>
+					<p class="read">阅读数 <span>207</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+		    <div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/chen18221987993/article/details/81943438#comments">C#自定义控件的创建</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/xtw77wh" class="user-name" target="_blank">xtw77wh：</a>不知为何，浏览添加失败                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/chen18221987993/article/details/81943438#comments">C#自定义控件的创建</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/qq_37280924" class="user-name" target="_blank">qq_37280924：</a>还需要引用 using System.IO;                </p>
+            </li>
+                    </ul>
+    </div>
+</div>
+		<div id="asideFooter">
+			
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57" data-track-view='{"mod":"kp_popu_57-77","con":",,"}' data-track-click='{"mod":"kp_popu_57-77","con":",,"}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3163270",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div>		</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+</div>
+<div class="mask-dark"></div>
+<div class="tool-box">
+	<ul class="meau-list">
+		<li class="btn-like-box long-width">
+			<button class=" long-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p>2</p>
+			</button>
+		</li>
+		<li class="">
+						<a class="btn-comments long-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+						2				</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<button class="btn-toc low-height hover-box" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</button>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<button class="btn-bookmark low-height hover-box" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</button>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/chen18221987993/article/details/80675675" title="python3.x   模块（库）的安装">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<li class="widescreen-hide">
+			<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/chen18221987993/article/details/82625365" title="快速转到CSDN收藏文章">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-chevronright"></use>
+				</svg>
+				<span class="hover-show text text3">下一篇</span>
+			</a>
+		</li>
+						<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/chen18221987993/article/details/80675675" title="python3.x   模块（库）的安装">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+																<li class="widescreen-more">
+					<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/chen18221987993/article/details/82625365" title="快速转到CSDN收藏文章">
+						<svg class="icon hover-hide" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronright"></use>
+						</svg>
+						<span class="hover-show text text3">下一篇</span>
+					</a>
+				</li>
+							</ul>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script>
+    var recommendCount = 81;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var articleTit = articleTitles;
+    var ChannelId = 16;
+    var articleId = "81943438";
+    var commentscount = 2;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/chen18221987993/article/details/81943438";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "C#自定义控件的创建 - chen18221987993的博客";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = '';
+		var highlight = ["c#","\u81ea\u5b9a\u4e49\u63a7\u4ef6","\u521b\u5efa"];//高亮数组
+		// 相关推荐博主数据
+    var RecommendBlogExpertList = [];
+	var articleType = 1;
+	var CopyrightContent = '';
+    var current_user_name = 'jinwenmao';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.js"></script>
+<script src="https://csdnimg.cn/public/common/gotop/js/goTop-v1.0.min.js?v201904241615"></script><script>
+    GoTop({
+        right: 8,
+        hasReport: true,
+        reportFun: function() {
+            showReport(false,articleTit);
+        }
+    })
+</script>
+</body>
+
+<!-- 高亮未与 markdown兼容  -->
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.3.9/ckeditor/plugins/chart/chart.css" />
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.3.9/ckeditor/plugins/chart/lib/chart.min.js"></script>
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.3.9/ckeditor/plugins/chart/widget2chart.js"></script>
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.3.9/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-light.css">
+	<script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-3bc59f8f2b.js" /></script>
+
+	<script type="text/javascript">
+	$(function(){
+		var allEscRegex = /&(lt|gt|amp|quot|nbsp|shy|#\d{1,5});/g,
+		    namedEntities = {
+					lt: '<',
+					gt: '>',
+					amp: '&',
+					quot: '"',
+					nbsp: '\u00a0',
+					shy: '\u00ad'
+				}
+		var allEscDecode = function( match, code ) {
+				return namedEntities[ code ];
+		};
+		htmlDecodeAttr = function( text ) {
+				return text.replace( allEscRegex, allEscDecode );
+		}
+	  hljs.initHighlighting();
+	  hljs.initCopyButtonOnLoad();
+	  hljs.initLineNumbersOnLoad();
+		if($('pre .language-plain').length>0){
+			$('pre .language-plain').each(function(i,e){
+				var highlightRe = hljs.highlightAuto(htmlDecodeAttr(e.innerHTML))
+				e.innerHTML = highlightRe.value;
+				e.className = 'language-'+highlightRe.language;
+			});
+		}
+	})
+	</script>
+
+<script src="//g.csdnimg.cn/??login-box/1.0.5/login-box.js,login-box/1.0.5/login-auto.js?t=20190307095522"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-0100d9c3da.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-8752043e22.min.js"></script>
+
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-fc7383b956.min.js"></script>
+
+<script src="//g.csdnimg.cn/baidu-search/1.0.0/baidu-search.js"  type="text/javascript"></script>
+
+
+<!-- <script type="text/javascript" src="//g.csdnimg.cn/check-adb/1.0.2/check-adb.js"></script> -->
+
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript">
+    </script>
+<script src="https://gh.bdstatic.com/static/gh/js/sdk/bword.min.js"></script>
+</html>
